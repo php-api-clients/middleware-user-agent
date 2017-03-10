@@ -7,10 +7,10 @@ use ApiClients\Middleware\UserAgent\Options;
 use ApiClients\Middleware\UserAgent\UserAgentMiddleware;
 use ApiClients\Middleware\UserAgent\UserAgentStrategy\StringStrategy;
 use ApiClients\Tools\TestUtilities\TestCase;
-use function Clue\React\Block\await;
 use React\EventLoop\Factory;
-use function React\Promise\reject;
 use RingCentral\Psr7\Request;
+use function Clue\React\Block\await;
+use function React\Promise\reject;
 
 final class UserAgentMiddlewareTest extends TestCase
 {

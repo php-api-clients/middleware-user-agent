@@ -6,8 +6,8 @@ use ApiClients\Middleware\UserAgent\Options;
 use ApiClients\Middleware\UserAgent\UserAgentStrategyInterface;
 use InvalidArgumentException;
 use PackageVersions\Versions;
-use function Composed\package;
 use Psr\Http\Message\RequestInterface;
+use function Composed\package;
 
 final class PackageVersionStrategy implements UserAgentStrategyInterface
 {
