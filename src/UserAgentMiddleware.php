@@ -16,6 +16,8 @@ final class UserAgentMiddleware implements MiddlewareInterface
     use PostTrait;
     use ErrorTrait;
 
+    private $cache = [];
+
     /**
      * @param RequestInterface $request
      * @param array $options
@@ -37,13 +39,18 @@ final class UserAgentMiddleware implements MiddlewareInterface
             return resolve($request);
         }
 
-        /** @var UserAgentStrategyInterface $strategy */
-        $strategy = new $strategy();
+        $hash = md5(serialize($options[UserAgentMiddleware::class]));
+        if (!isset($this->cache[$hash])) {
+            /** @var UserAgentStrategyInterface $strategy */
+            $strategy = new $strategy();
+
+            $this->cache[$hash] = $strategy->determineUserAgent($request, $options[UserAgentMiddleware::class]);
+        }
 
         return resolve(
             $request->withAddedHeader(
                 'User-Agent',
-                $strategy->determineUserAgent($request, $options[UserAgentMiddleware::class])
+                $this->cache[$hash]
             )
         );
     }
