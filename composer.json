@@ -50,6 +50,10 @@
       "@ensure-installed",
       "parallel-lint --exclude vendor ."
     ],
+    "benchmark": [
+      "@ensure-installed",
+      "php examples/benchmark.php"
+    ],
     "qa-all": [
       "@lint-php",
       "@cs",
@@ -66,13 +70,16 @@
       "@unit"
     ],
     "qa-ci": [
-      "@qa-all"
+      "@qa-all",
+      "@benchmark"
     ],
     "qa-ci-coverage": [
-      "@qa-all-coverage"
+      "@qa-all-coverage",
+      "@benchmark"
     ],
     "qa-ci-windows": [
-      "@qa-windows"
+      "@qa-windows",
+      "@benchmark"
     ],
     "qa-contrib": [
       "@qa-all"

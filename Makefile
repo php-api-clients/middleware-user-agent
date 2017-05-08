@@ -19,6 +19,9 @@ init:
 cs:
 	composer cs
 
+benchmark:
+	composer benchmark
+
 unit:
 	composer run-script unit --timeout=0
 
