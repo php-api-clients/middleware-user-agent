@@ -12,7 +12,6 @@ use function React\Promise\resolve;
 
 final class UserAgentMiddleware implements MiddlewareInterface
 {
-    use DefaultPriorityTrait;
     use PostTrait;
     use ErrorTrait;
 
@@ -23,8 +22,11 @@ final class UserAgentMiddleware implements MiddlewareInterface
      * @param array $options
      * @return CancellablePromiseInterface
      */
-    public function pre(RequestInterface $request, array $options = []): CancellablePromiseInterface
-    {
+    public function pre(
+        RequestInterface $request,
+        string $transactionId,
+        array $options = []
+    ): CancellablePromiseInterface {
         if (!isset($options[UserAgentMiddleware::class][Options::STRATEGY])) {
             return resolve($request);
         }

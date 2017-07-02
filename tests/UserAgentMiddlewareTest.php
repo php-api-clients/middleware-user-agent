@@ -14,17 +14,6 @@ use function React\Promise\reject;
 
 final class UserAgentMiddlewareTest extends TestCase
 {
-    /**
-     * Ensure we run second last so the last can be logging or so that stores information.
-     */
-    public function testPriority()
-    {
-        self::assertSame(
-            Priority::DEFAULT,
-            (new UserAgentMiddleware())->priority()
-        );
-    }
-
     public function testPre()
     {
         $request = new Request('GET', 'https://example.com/');
@@ -35,6 +24,7 @@ final class UserAgentMiddlewareTest extends TestCase
             await(
                 (new UserAgentMiddleware())->pre(
                     $request,
+                    'abc',
                     [
                         UserAgentMiddleware::class => [
                             Options::STRATEGY   => StringStrategy::class,

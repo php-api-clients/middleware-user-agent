@@ -18,6 +18,6 @@ $middleware = new UserAgentMiddleware();
 
 $start = time();
 for ($i = 0; $i < 1000000; $i++) {
-    $middleware->pre(clone $request, $options);
+    $middleware->pre(clone $request, bin2hex(random_bytes(32)), $options);
 }
 echo 'Took: ', (time() - $start), ' seconds', PHP_EOL;
