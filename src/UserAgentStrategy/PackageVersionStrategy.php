@@ -5,7 +5,7 @@ namespace ApiClients\Middleware\UserAgent\UserAgentStrategy;
 use ApiClients\Middleware\UserAgent\Options;
 use ApiClients\Middleware\UserAgent\UserAgentStrategyInterface;
 use InvalidArgumentException;
-use PackageVersions\Versions;
+use Jean85\PrettyVersions;
 use Psr\Http\Message\RequestInterface;
 use function Composed\package;
 
@@ -23,7 +23,7 @@ final class PackageVersionStrategy implements UserAgentStrategyInterface
 
         $chunks = [];
         $chunks[] = $package;
-        $chunks[] = explode('@', Versions::getVersion($package))[0];
+        $chunks[] = PrettyVersions::getVersion($package)->getShortVersion();
         $chunks[] = $this->getWebsite($package);
 
         return sprintf(
