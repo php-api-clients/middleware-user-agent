@@ -2102,16 +2102,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "2.9.0",
+            "version": "2.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "f7dfecbee89d68ab475a6c9e17d22bc9b69aed97"
+                "reference": "2acf168de78487db620ab4bc524135a13cfe6745"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/f7dfecbee89d68ab475a6c9e17d22bc9b69aed97",
-                "reference": "f7dfecbee89d68ab475a6c9e17d22bc9b69aed97",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/2acf168de78487db620ab4bc524135a13cfe6745",
+                "reference": "2acf168de78487db620ab4bc524135a13cfe6745",
                 "shasum": ""
             },
             "require": {
@@ -2176,7 +2176,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2017-05-03T23:30:39+00:00"
+            "time": "2018-11-07T22:31:41+00:00"
         },
         {
             "name": "theseer/tokenizer",
