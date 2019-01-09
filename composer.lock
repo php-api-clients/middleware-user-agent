@@ -276,27 +276,27 @@
         },
         {
             "name": "ocramius/package-versions",
-            "version": "1.1.3",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ocramius/PackageVersions.git",
-                "reference": "72b226d2957e9e6a9ed09aeaa29cabd840d1a3b7"
+                "reference": "4489d5002c49d55576fa0ba786f42dbb009be46f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ocramius/PackageVersions/zipball/72b226d2957e9e6a9ed09aeaa29cabd840d1a3b7",
-                "reference": "72b226d2957e9e6a9ed09aeaa29cabd840d1a3b7",
+                "url": "https://api.github.com/repos/Ocramius/PackageVersions/zipball/4489d5002c49d55576fa0ba786f42dbb009be46f",
+                "reference": "4489d5002c49d55576fa0ba786f42dbb009be46f",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "^1.0",
-                "php": "~7.0"
+                "composer-plugin-api": "^1.0.0",
+                "php": "^7.1.0"
             },
             "require-dev": {
-                "composer/composer": "^1.3",
+                "composer/composer": "^1.6.3",
                 "ext-zip": "*",
-                "humbug/humbug": "dev-master",
-                "phpunit/phpunit": "^5.7.5"
+                "infection/infection": "^0.7.1",
+                "phpunit/phpunit": "^7.0.0"
             },
             "type": "composer-plugin",
             "extra": {
@@ -321,7 +321,7 @@
                 }
             ],
             "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
-            "time": "2017-09-06T15:24:43+00:00"
+            "time": "2018-02-05T13:05:30+00:00"
         },
         {
             "name": "psr/http-message",
