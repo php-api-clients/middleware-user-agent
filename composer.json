@@ -39,7 +39,11 @@
     "ensure-installed": "composer install --ansi -n -q",
     "cs": [
       "@ensure-installed",
-      "phpcs --standard=PSR2 src/"
+      "php-cs-fixer fix --config=.php_cs --ansi --dry-run --diff --verbose --allow-risky=yes --show-progress=estimating"
+    ],
+    "cs-fix": [
+      "@ensure-installed",
+      "php-cs-fixer fix --config=.php_cs --ansi --verbose --allow-risky=yes --show-progress=estimating"
     ],
     "unit": [
       "@ensure-installed",
@@ -52,10 +56,6 @@
     "lint-php": [
       "@ensure-installed",
       "parallel-lint --exclude vendor ."
-    ],
-    "benchmark": [
-      "@ensure-installed",
-      "php examples/benchmark.php"
     ],
     "qa-all": [
       "@lint-php",
@@ -73,16 +73,13 @@
       "@unit"
     ],
     "qa-ci": [
-      "@qa-all",
-      "@benchmark"
+      "@unit"
     ],
-    "qa-ci-coverage": [
-      "@qa-all-coverage",
-      "@benchmark"
+    "qa-ci-extended": [
+      "@qa-all-coverage"
     ],
     "qa-ci-windows": [
-      "@qa-windows",
-      "@benchmark"
+      "@qa-windows"
     ],
     "qa-contrib": [
       "@qa-all"
