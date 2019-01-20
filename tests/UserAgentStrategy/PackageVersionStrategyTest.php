@@ -9,12 +9,15 @@ use InvalidArgumentException;
 use PackageVersions\Versions;
 use Psr\Http\Message\RequestInterface;
 
+/**
+ * @internal
+ */
 final class PackageVersionStrategyTest extends TestCase
 {
-    public function testWorking()
+    public function testWorking(): void
     {
         self::assertSame(
-            'api-clients/middleware-user-agent ' . explode('@', Versions::getVersion('api-clients/middleware-user-agent'))[0] . ' powered by PHP API Clients https://php-api-clients.org/',
+            'api-clients/middleware-user-agent ' . \explode('@', Versions::getVersion('api-clients/middleware-user-agent'))[0] . ' powered by PHP API Clients https://php-api-clients.org/',
             (new PackageVersionStrategy())->determineUserAgent(
                 $this->prophesize(RequestInterface::class)->reveal(),
                 [
@@ -28,7 +31,7 @@ final class PackageVersionStrategyTest extends TestCase
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage Missing package option
      */
-    public function testFail()
+    public function testFail(): void
     {
         (new PackageVersionStrategy())->determineUserAgent(
             $this->prophesize(RequestInterface::class)->reveal(),

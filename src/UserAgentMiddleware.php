@@ -2,7 +2,6 @@
 
 namespace ApiClients\Middleware\UserAgent;
 
-use ApiClients\Foundation\Middleware\DefaultPriorityTrait;
 use ApiClients\Foundation\Middleware\ErrorTrait;
 use ApiClients\Foundation\Middleware\MiddlewareInterface;
 use ApiClients\Foundation\Middleware\PostTrait;
@@ -18,8 +17,8 @@ final class UserAgentMiddleware implements MiddlewareInterface
     private $cache = [];
 
     /**
-     * @param RequestInterface $request
-     * @param array $options
+     * @param  RequestInterface            $request
+     * @param  array                       $options
      * @return CancellablePromiseInterface
      */
     public function pre(
@@ -33,15 +32,15 @@ final class UserAgentMiddleware implements MiddlewareInterface
 
         $strategy = $options[UserAgentMiddleware::class][Options::STRATEGY];
 
-        if (!class_exists($strategy)) {
+        if (!\class_exists($strategy)) {
             return resolve($request);
         }
 
-        if (!is_subclass_of($strategy, UserAgentStrategyInterface::class)) {
+        if (!\is_subclass_of($strategy, UserAgentStrategyInterface::class)) {
             return resolve($request);
         }
 
-        $hash = md5(serialize($options[UserAgentMiddleware::class]));
+        $hash = \md5(\serialize($options[UserAgentMiddleware::class]));
         if (!isset($this->cache[$hash])) {
             /** @var UserAgentStrategyInterface $strategy */
             $strategy = new $strategy();

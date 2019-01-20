@@ -2,19 +2,20 @@
 
 namespace ApiClients\Tests\Middleware\UserAgent;
 
-use ApiClients\Foundation\Middleware\Priority;
 use ApiClients\Middleware\UserAgent\Options;
 use ApiClients\Middleware\UserAgent\UserAgentMiddleware;
 use ApiClients\Middleware\UserAgent\UserAgentStrategy\StringStrategy;
 use ApiClients\Tools\TestUtilities\TestCase;
+use function Clue\React\Block\await;
 use React\EventLoop\Factory;
 use RingCentral\Psr7\Request;
-use function Clue\React\Block\await;
-use function React\Promise\reject;
 
+/**
+ * @internal
+ */
 final class UserAgentMiddlewareTest extends TestCase
 {
-    public function testPre()
+    public function testPre(): void
     {
         $request = new Request('GET', 'https://example.com/');
         $expectedRequest = new Request('GET', 'https://example.com/', ['User-Agent' => 'foo.bar',]);

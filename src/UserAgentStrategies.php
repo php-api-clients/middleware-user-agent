@@ -2,8 +2,6 @@
 
 namespace ApiClients\Middleware\UserAgent;
 
-use ApiClients\Middleware\UserAgent\UserAgentStrategy;
-
 final class UserAgentStrategies
 {
     const STRING          = UserAgentStrategy\StringStrategy::class;

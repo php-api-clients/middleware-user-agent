@@ -8,9 +8,12 @@ use ApiClients\Tools\TestUtilities\TestCase;
 use InvalidArgumentException;
 use Psr\Http\Message\RequestInterface;
 
+/**
+ * @internal
+ */
 final class StringStrategyTest extends TestCase
 {
-    public function testWorking()
+    public function testWorking(): void
     {
         $userAgent = 'abc';
 
@@ -29,7 +32,7 @@ final class StringStrategyTest extends TestCase
      * @expectedException InvalidArgumentException
      * @expectedExceptionMessage Missing user agent option
      */
-    public function testFail()
+    public function testFail(): void
     {
         (new StringStrategy())->determineUserAgent(
             $this->prophesize(RequestInterface::class)->reveal(),

@@ -4,10 +4,10 @@ namespace ApiClients\Middleware\UserAgent\UserAgentStrategy;
 
 use ApiClients\Middleware\UserAgent\Options;
 use ApiClients\Middleware\UserAgent\UserAgentStrategyInterface;
+use function Composed\package;
 use InvalidArgumentException;
 use Jean85\PrettyVersions;
 use Psr\Http\Message\RequestInterface;
-use function Composed\package;
 
 final class PackageVersionStrategy implements UserAgentStrategyInterface
 {
@@ -26,13 +26,13 @@ final class PackageVersionStrategy implements UserAgentStrategyInterface
         $chunks[] = PrettyVersions::getVersion($package)->getShortVersion();
         $chunks[] = $this->getWebsite($package);
 
-        return sprintf(
+        return \sprintf(
             self::USER_AGENT,
             ...$chunks
         );
     }
 
-    protected function getWebsite(string $package)
+    private function getWebsite(string $package)
     {
         $package = package($package);
         $homepage = $package->getConfig('homepage');
@@ -41,7 +41,7 @@ final class PackageVersionStrategy implements UserAgentStrategyInterface
             return '';
         }
 
-        if (filter_var($homepage, FILTER_VALIDATE_URL) === false) {
+        if (\filter_var($homepage, \FILTER_VALIDATE_URL) === false) {
             return '';
         }
 
