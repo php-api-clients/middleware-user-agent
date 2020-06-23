@@ -59,6 +59,75 @@
             "time": "2017-06-28T19:24:19+00:00"
         },
         {
+            "name": "composer/package-versions-deprecated",
+            "version": "1.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/package-versions-deprecated.git",
+                "reference": "b9805885293f3957ee0dd42616ac6915c4ac9a4b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/package-versions-deprecated/zipball/b9805885293f3957ee0dd42616ac6915c4ac9a4b",
+                "reference": "b9805885293f3957ee0dd42616ac6915c4ac9a4b",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.1.0 || ^2.0",
+                "php": "^7"
+            },
+            "replace": {
+                "ocramius/package-versions": "1.8.99"
+            },
+            "require-dev": {
+                "composer/composer": "^1.9.3 || ^2.0@dev",
+                "ext-zip": "^1.13",
+                "phpunit/phpunit": "^6.5 || ^7"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "PackageVersions\\Installer",
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PackageVersions\\": "src/PackageVersions"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com"
+                },
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be"
+                }
+            ],
+            "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-06-19T07:59:31+00:00"
+        },
+        {
             "name": "doctrine/annotations",
             "version": "v1.6.0",
             "source": {
@@ -182,20 +251,20 @@
         },
         {
             "name": "jean85/pretty-package-versions",
-            "version": "1.2",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Jean85/pretty-package-versions.git",
-                "reference": "75c7effcf3f77501d0e0caa75111aff4daa0dd48"
+                "reference": "e9f4324e88b8664be386d90cf60fbc202e1f7fc9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Jean85/pretty-package-versions/zipball/75c7effcf3f77501d0e0caa75111aff4daa0dd48",
-                "reference": "75c7effcf3f77501d0e0caa75111aff4daa0dd48",
+                "url": "https://api.github.com/repos/Jean85/pretty-package-versions/zipball/e9f4324e88b8664be386d90cf60fbc202e1f7fc9",
+                "reference": "e9f4324e88b8664be386d90cf60fbc202e1f7fc9",
                 "shasum": ""
             },
             "require": {
-                "ocramius/package-versions": "^1.2.0",
+                "composer/package-versions-deprecated": "^1.8.0",
                 "php": "^7.0"
             },
             "require-dev": {
@@ -229,7 +298,7 @@
                 "release",
                 "versions"
             ],
-            "time": "2018-06-13T13:22:40+00:00"
+            "time": "2020-06-23T06:23:06+00:00"
         },
         {
             "name": "joshdifabio/composed",
@@ -279,56 +348,6 @@
                 "package"
             ],
             "time": "2015-07-16T22:30:20+00:00"
-        },
-        {
-            "name": "ocramius/package-versions",
-            "version": "1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Ocramius/PackageVersions.git",
-                "reference": "a4d4b60d0e60da2487bd21a2c6ac089f85570dbb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Ocramius/PackageVersions/zipball/a4d4b60d0e60da2487bd21a2c6ac089f85570dbb",
-                "reference": "a4d4b60d0e60da2487bd21a2c6ac089f85570dbb",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0.0",
-                "php": "^7.1.0"
-            },
-            "require-dev": {
-                "composer/composer": "^1.6.3",
-                "doctrine/coding-standard": "^5.0.1",
-                "ext-zip": "*",
-                "infection/infection": "^0.7.1",
-                "phpunit/phpunit": "^7.0.0"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "PackageVersions\\Installer",
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "PackageVersions\\": "src/PackageVersions"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com"
-                }
-            ],
-            "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
-            "time": "2019-02-21T12:16:21+00:00"
         },
         {
             "name": "psr/http-message",
@@ -1230,6 +1249,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -1276,6 +1296,7 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
@@ -1324,6 +1345,7 @@
             ],
             "description": "This tool check syntax of PHP files about 20x faster than serial check.",
             "homepage": "https://github.com/JakubOnderka/PHP-Parallel-Lint",
+            "abandoned": "php-parallel-lint/php-parallel-lint",
             "time": "2018-02-24T15:31:20+00:00"
         },
         {
@@ -1489,6 +1511,7 @@
                 "json",
                 "normalizer"
             ],
+            "abandoned": "ergebnis/composer-json-normalizer",
             "time": "2019-01-09T14:43:16+00:00"
         },
         {
@@ -1554,6 +1577,7 @@
                 "normalizer",
                 "plugin"
             ],
+            "abandoned": "ergebnis/composer-normalize",
             "time": "2019-03-13T14:42:11+00:00"
         },
         {
@@ -1606,6 +1630,7 @@
                 "json",
                 "normalizer"
             ],
+            "abandoned": "ergebnis/json-normalizer",
             "time": "2018-10-07T17:36:39+00:00"
         },
         {
@@ -1655,6 +1680,7 @@
                 "json",
                 "printer"
             ],
+            "abandoned": "ergebnis/json-printer",
             "time": "2018-08-11T23:54:50+00:00"
         },
         {
@@ -1708,6 +1734,7 @@
                 "phpstan-extreme-rules",
                 "phpstan-rules"
             ],
+            "abandoned": "ergebnis/phpstan-rules",
             "time": "2019-01-17T22:24:11+00:00"
         },
         {
@@ -1825,7 +1852,7 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "🅱 Nette Bootstrap: the simple way to configure and bootstrap your Nette application.",
+            "description": "? Nette Bootstrap: the simple way to configure and bootstrap your Nette application.",
             "homepage": "https://nette.org",
             "keywords": [
                 "bootstrapping",
@@ -1890,7 +1917,7 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "💎 Nette Dependency Injection Container: Flexible, compiled and full-featured DIC with perfectly usable autowiring and support for all new PHP 7.1 features.",
+            "description": "? Nette Dependency Injection Container: Flexible, compiled and full-featured DIC with perfectly usable autowiring and support for all new PHP 7.1 features.",
             "homepage": "https://nette.org",
             "keywords": [
                 "compiled",
@@ -1955,7 +1982,7 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "🔍 Nette Finder: find files and directories with an intuitive API.",
+            "description": "? Nette Finder: find files and directories with an intuitive API.",
             "homepage": "https://nette.org",
             "keywords": [
                 "filesystem",
@@ -2015,7 +2042,7 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "🍸 Nette NEON: encodes and decodes NEON file format.",
+            "description": "? Nette NEON: encodes and decodes NEON file format.",
             "homepage": "http://ne-on.org",
             "keywords": [
                 "export",
@@ -2078,7 +2105,7 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "🐘 Nette PHP Generator: generates neat PHP code for you. Supports new PHP 7.3 features.",
+            "description": "? Nette PHP Generator: generates neat PHP code for you. Supports new PHP 7.3 features.",
             "homepage": "https://nette.org",
             "keywords": [
                 "code",
@@ -2142,7 +2169,7 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "🍀 Nette RobotLoader: high performance and comfortable autoloader that will search and autoload classes within your application.",
+            "description": "? Nette RobotLoader: high performance and comfortable autoloader that will search and autoload classes within your application.",
             "homepage": "https://nette.org",
             "keywords": [
                 "autoload",
@@ -2215,7 +2242,7 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "🛠 Nette Utils: lightweight utilities for string & array manipulation, image handling, safe JSON encoding/decoding, validation, slug or strong password generating etc.",
+            "description": "? Nette Utils: lightweight utilities for string & array manipulation, image handling, safe JSON encoding/decoding, validation, slug or strong password generating etc.",
             "homepage": "https://nette.org",
             "keywords": [
                 "array",
@@ -4938,7 +4965,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "backendtea@gmail.com"
+                    "email": "BackEndTea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
@@ -5717,7 +5744,7 @@
                     "email": "ceesjank@gmail.com"
                 }
             ],
-            "description": "🌯 PHPStan rules wrapper",
+            "description": "? PHPStan rules wrapper",
             "time": "2019-03-16T14:53:23+00:00"
         },
         {
@@ -5779,5 +5806,6 @@
     "platform-dev": [],
     "platform-overrides": {
         "php": "7.2"
-    }
+    },
+    "plugin-api-version": "1.1.0"
 }
